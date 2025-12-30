@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RideBooking - Your Trusted Ride Partner</title>
+    <meta name="description" content="Book drivers, cabs, and parcel delivery services with ease" />
+    <meta name="author" content="RideBooking" />
+
+    <meta property="og:title" content="RideBooking - Your Trusted Ride Partner" />
+    <meta property="og:description" content="Book drivers, cabs, and parcel delivery services with ease" />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ridebooking" />
+    
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <script>
+      console.log('Fetching Google Maps script from backend...');
+      fetch('https://adminbackend.hire4drive.com/api/google-maps-script')
+        .then(response => {
+          console.log('Backend response status:', response.status);
+          return response.text();
+        })
+        .then(scriptContent => {
+          console.log('Script content received:', scriptContent.substring(0, 100));
+          const script = document.createElement('script');
+          script.textContent = scriptContent;
+          document.head.appendChild(script);
+        })
+        .catch(error => {
+          console.error('Failed to load Google Maps script from backend:', error);
+          
+        });
+    </script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
