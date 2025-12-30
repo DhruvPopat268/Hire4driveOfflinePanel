@@ -45,7 +45,7 @@ export default function PaymentComponent() {
       // Check if unauthorized
       if (response.status === 401) {
         alert("Your session has expired. Please login again.");
-        navigate("/login");
+        navigate("/");
         return;
       }
 

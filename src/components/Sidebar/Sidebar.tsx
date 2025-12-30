@@ -69,13 +69,13 @@ const Sidebar = ({ onNavigate }) => {
       // Clear localStorage and update state
       localStorage.clear();
       setIsLoggedIn(false);
-      navigate('/login');
+      navigate('/');
     } catch (error) {
       console.error("Error during logout:", error);
       // Even if API fails, clear local state
       localStorage.clear();
       setIsLoggedIn(false);
-      navigate('/login');
+      navigate('/');
     }
   };
   const deleteRider = async () => {
@@ -93,7 +93,7 @@ const Sidebar = ({ onNavigate }) => {
         // Clear localStorage and update state
         localStorage.clear();
         setIsLoggedIn(false);
-        navigate("/login");
+        navigate("/");
       } else {
         const data = await res.json();
         console.error("Failed to delete rider:", data.message || "Unknown error");
@@ -120,7 +120,7 @@ const Sidebar = ({ onNavigate }) => {
 
   const handleLoginClick = () => {
     closeSidebar();
-    navigate('/login');
+    navigate('/');
   };
 
 const menuItems = [

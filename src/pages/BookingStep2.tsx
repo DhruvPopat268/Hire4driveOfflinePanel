@@ -239,7 +239,7 @@ const BookingStep2 = () => {
           receiverPhone: receiverPhone,
           selectedDates: selectedDates
         };
-        navigate("/login", { state: bookingDetails });
+        navigate("/", { state: bookingDetails });
         return;
       }
       setInstructions([]);
@@ -352,7 +352,7 @@ const BookingStep2 = () => {
           receiverPhone: receiverPhone,
           selectedDates: selectedDates
         };
-        navigate("/login", { state: bookingDetails });
+        navigate("/", { state: bookingDetails });
         return;
       }
 
@@ -542,7 +542,7 @@ const BookingStep2 = () => {
             receiverPhone: receiverPhone,
             selectedDates: selectedDates
           };
-          navigate("/login", { state: bookingDetails });
+          navigate("/", { state: bookingDetails });
           return;
         }
       }
@@ -797,7 +797,7 @@ const BookingStep2 = () => {
             receiverPhone: receiverPhone,
             selectedDates: selectedDates
           };
-          navigate("/login", { state: bookingDetails });
+          navigate("/", { state: bookingDetails });
           return;
         }
         setWalletBalance(0);
@@ -914,14 +914,14 @@ const BookingStep2 = () => {
       );
 
       if (!res.data?.success) {
-        navigate("/login");
+        navigate("/");
         return;
       }
 
       setShowTermsModal(true);
     } catch (error) {
       console.error("Staff auth check failed:", error);
-      navigate("/login");
+      navigate("/");
     }
   };
 
@@ -1046,7 +1046,7 @@ const BookingStep2 = () => {
       console.error(error);
       if (error.response?.status === 401) {
         alert("Your session has expired. Please login again.");
-        navigate("/login");
+        navigate("/");
         return;
       }
       alert("Something went wrong!");

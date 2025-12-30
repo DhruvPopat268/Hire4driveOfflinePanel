@@ -266,7 +266,7 @@ const Booking = () => {
       } catch (err) {
         console.error("Error fetching staff:", err);
         if (err.response?.status === 401) {
-          navigate('/login');
+          navigate('/');
         }
       }
     };
